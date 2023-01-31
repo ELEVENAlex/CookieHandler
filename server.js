@@ -11,8 +11,8 @@ app.get('/', (req, res) => {
 
 app.get('/setcookie', (req, res) => {
     res.cookie('moto', 'mami', {
-        maxAge: 7000,
-        //expires: new Date('2023-12-31'),
+        //maxAge: 7000,
+        expires: new Date('2023-12-31'),
         httpOnly: true,
         secure: true,
         sameSite: 'lax'
@@ -29,7 +29,7 @@ app.get('/getcookie', (req, res) => {
 
 app.get('/deletecookie', (req, res) => {
     console.log(req.cookies)
-    res.clearCookie()
+    res.clearCookie('name')
     res.send('Deleting cookies...')
 })
 
